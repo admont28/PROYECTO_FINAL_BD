@@ -105,8 +105,8 @@ CONSTRAINT FK_FAC_EN_PROG FOREIGN KEY (ID_FACULTAD) REFERENCES FACULTAD (FACULTA
 CONSTRAINT FK_CON_CUR_EN_PROG FOREIGN KEY (ID_CONSEJO_CURRICULAR) REFERENCES CONSEJO_CURRICULAR(CONSEJO_CURRICULAR_ID)
 );
 COMMENT ON TABLE PROGRAMA_ACADEMICO IS 'Es la entidad que contiene los datos del programa academico de una facultad';
-COMMENT ON COLUMN PROGRAMA_ACADEMICO.PROGRAMA_ACADEMICO_ID IS 'Es la llave primaria de la tabla programa académico.';
-COMMENT ON COLUMN PROGRAMA_ACADEMICO.NOMBRE_PROGRAMA IS 'Es el nombre del programa académico.';
+COMMENT ON COLUMN PROGRAMA_ACADEMICO.PROGRAMA_ACADEMICO_ID IS 'Es la llave primaria de la tabla programa acad?mico.';
+COMMENT ON COLUMN PROGRAMA_ACADEMICO.NOMBRE_PROGRAMA IS 'Es el nombre del programa acad?mico.';
 COMMENT ON COLUMN PROGRAMA_ACADEMICO.ID_FACULTAD IS 'Es la llave foranea que identifica la facultad a la cual pertenece el programa.';
 COMMENT ON COLUMN PROGRAMA_ACADEMICO.ID_CONSEJO_CURRICULAR IS 'Es la llave foranea que identifica el consejo curricular al cual pertenece el programa.';
 
@@ -143,7 +143,7 @@ JORNADA_ID VARCHAR2 (20) NOT NULL,
 NOMBRE_JORNADA VARCHAR2 (20) NOT NULL,
 CONSTRAINT PK_JORNADA PRIMARY KEY (JORNADA_ID)
 );
-COMMENT ON TABLE JORNADA IS 'Es entidad que contiene los datos de la jornada en la cual se desempeña un director de programa';
+COMMENT ON TABLE JORNADA IS 'Es entidad que contiene los datos de la jornada en la cual se desempe?a un director de programa';
 COMMENT ON COLUMN JORNADA.JORNADA_ID IS 'Es la llave primara de la tabla jornada';
 COMMENT ON COLUMN JORNADA.NOMBRE_JORNADA IS 'Es el nombre de la jornada del programa academico (nocturno, diurno, a distancia).';
 
@@ -180,7 +180,7 @@ COMMENT ON COLUMN AUXILIAR.NOMBRE_AUXILIAR IS 'Es el nombre del auxiliar';
 COMMENT ON COLUMN AUXILIAR.APELLIDO_AUXILIAR IS 'Es el apellido del auxiliar';
 COMMENT ON COLUMN AUXILIAR.TELEFONO_AUXILIAR IS 'Es el telefono del auxiliar';
 COMMENT ON COLUMN AUXILIAR.ID_DIRECCION IS 'Es el la llave foranea que identifica la direccion que tiene el auxiliar';
-COMMENT ON COLUMN AUXILIAR.ID_PROGRAMA_ACADEMICO IS 'Es la llave foranea que identifica el programa académico al que pertenece el auxiliar';
+COMMENT ON COLUMN AUXILIAR.ID_PROGRAMA_ACADEMICO IS 'Es la llave foranea que identifica el programa acad?mico al que pertenece el auxiliar';
 
 CREATE TABLE TIPO_REQUISITO (
 TIPO_REQUISITO_ID VARCHAR2 (20) NOT NULL,
@@ -239,7 +239,7 @@ CONSTRAINT PK_TIPO_AUXILIAR PRIMARY KEY (TIPO_AUXILIAR_ID)
 );
 COMMENT ON TABLE TIPO_AUXILIAR IS 'Es la entidad que contiene los datos del tipo auxiliar (docencia, administrativos, monitor... entre otros que se requieran).';
 COMMENT ON COLUMN TIPO_AUXILIAR.TIPO_AUXILIAR_ID IS 'Es la llave primaria de la tabla Tipo auxiliar';
-COMMENT ON COLUMN TIPO_AUXILIAR.DESCRIPCION_TIPO_AUXILIAR IS 'Es la descripción de la tabla tipo auxiliar';
+COMMENT ON COLUMN TIPO_AUXILIAR.DESCRIPCION_TIPO_AUXILIAR IS 'Es la descripci?n de la tabla tipo auxiliar';
 
 CREATE TABLE CONVOCATORIA (
 CONVOCATORIA_ID VARCHAR2 (20) NOT NULL,
@@ -296,15 +296,19 @@ COMMENT ON COLUMN EVALUACION_AUXILIARES.ID_SOLICITANTE IS 'Es la llave foranea q
 COMMENT ON COLUMN EVALUACION_AUXILIARES.ID_CONVOCATORIA IS 'Es la llave foranea que identifica la convocatoria a la cual pertenece la evaluacion';
 
 CREATE TABLE SELECCION_AUXILIARES (
+/* SE AGREGA EST? LLAVE PRIMARIA (LA PEDIA NETBEANS) ADEM?S TODA ENTIDADE DEBE TENER LLAVE PRIMARIA (NORMALIZACI?N) */
+SELECCION_AUXILIARES_ID NUMBER(20) NOT NULL,
 CALIFICACION NUMBER (1,1),
 ESTADO NUMBER (1,0) NOT NULL,
 PROMEDIO NUMBER(1,1) NOT NULL,
 ID_AUXILIARES VARCHAR2 (20) NOT NULL,
 ID_EVALUACION_AUXILIARES VARCHAR (20),
+CONSTRAINT PK_SELECCION_AUXILIARES PRIMARY KEY (SELECCION_AUXILIARES_ID),
 CONSTRAINT FK_AUX_EN_SEL_AUX FOREIGN KEY (ID_AUXILIARES) REFERENCES AUXILIAR (AUXILIAR_ID),
 CONSTRAINT FK_EVAL_AUX_EN_SEL_AUX FOREIGN KEY (ID_EVALUACION_AUXILIARES) REFERENCES EVALUACION_AUXILIARES (EVALUACION_AUXILIARES_ID)
 );
 COMMENT ON TABLE SELECCION_AUXILIARES IS 'Es la entidad puente que contiene los datos de los auxiliares y la evaluacion';
+COMMENT ON COLUMN SELECCION_AUXILIARES.SELECCION_AUXILIARES_ID IS 'Es la llave primaria de la entidad Seleccion Auxiliares';
 COMMENT ON COLUMN SELECCION_AUXILIARES.CALIFICACION IS 'Es la calificacion de la prueba practicada, puede ser nula sin no aplica prueba';
 COMMENT ON COLUMN SELECCION_AUXILIARES.ESTADO IS 'Es estado de la prueba practicada a los auxiliares';
 COMMENT ON COLUMN SELECCION_AUXILIARES.PROMEDIO IS 'Es el promedio del auxiliar';
@@ -322,7 +326,7 @@ CONSTRAINT FK_ID_AUX_EN_HOR_ACT FOREIGN KEY (ID_AUXILIAR) REFERENCES AUXILIAR (A
 );
 COMMENT ON TABLE HORARIO_ACTIVIDADES IS 'Es la entidad que contiene los datos del horario del auxiliar.';
 COMMENT ON COLUMN HORARIO_ACTIVIDADES.HORARIO_ACTIVIDADES_ID  IS 'Es la llave primaria de la tabla horario auxiliar.';
-COMMENT ON COLUMN HORARIO_ACTIVIDADES.FECHA_CREACION_HORARIO_ACTIV IS 'Es la fecha de cración del horario de actividades';
+COMMENT ON COLUMN HORARIO_ACTIVIDADES.FECHA_CREACION_HORARIO_ACTIV IS 'Es la fecha de craci?n del horario de actividades';
 COMMENT ON COLUMN HORARIO_ACTIVIDADES.ID_TIPO_AUXILIAR IS 'Es el campo que identifica la llave foranea de la tabla tipo auxiliar';
 COMMENT ON COLUMN HORARIO_ACTIVIDADES.ID_AUXILIAR IS 'Es el campo que identifica la llave foranea de la tabla auxiliar';
 
@@ -349,7 +353,7 @@ CONSTRAINT FK_FECHA_HORARIO_EN_HORA FOREIGN KEY (ID_FECHA_HORARIO) REFERENCES FE
 COMMENT ON TABLE HORA IS 'Es la entidad que contiene las horas asignadas o concordadas con el auxiliar para realizar las actividades.';
 COMMENT ON COLUMN HORA.HORA_ID  IS 'Es la llave primaria de la tabla hora.';
 COMMENT ON COLUMN HORA.HORA_INICIO IS 'Es el campo que identifica la hora de unicio de las actividades.';
-COMMENT ON COLUMN HORA.HORA_FIN IS 'Es el campo que identifica la hora de finalización de las actividades.';
+COMMENT ON COLUMN HORA.HORA_FIN IS 'Es el campo que identifica la hora de finalizaci?n de las actividades.';
 COMMENT ON COLUMN HORA.ID_FECHA_HORARIO IS 'Es el campo que identifica la llave foranea de la tabla fecha horario.';
 
 CREATE TABLE CUMPLIMIENTO_ACTIVIDADES(
@@ -363,18 +367,22 @@ CONSTRAINT FK_SOL_EN_CUMP_ACT FOREIGN KEY (ID_SOLICITANTE) REFERENCES SOLICITANT
 COMMENT ON TABLE CUMPLIMIENTO_ACTIVIDADES IS 'Es la entidad que contiene el cumplimiento de las actividades del auxiliar.';
 COMMENT ON COLUMN CUMPLIMIENTO_ACTIVIDADES.CUMP_ACT_ID IS 'Es la llave primaria de la tabla cumplimieto actividades.';
 COMMENT ON COLUMN CUMPLIMIENTO_ACTIVIDADES.DESC_CUMP_ACT IS 'Es el campo que identifica a la descripcion del cumplimiento de activiades.';
-COMMENT ON COLUMN CUMPLIMIENTO_ACTIVIDADES.FECHA_CREACION_CUMP_ACT IS 'Es el campo que identifica a la fecha de creación del cumplimiento.';
+COMMENT ON COLUMN CUMPLIMIENTO_ACTIVIDADES.FECHA_CREACION_CUMP_ACT IS 'Es el campo que identifica a la fecha de creaci?n del cumplimiento.';
 COMMENT ON COLUMN CUMPLIMIENTO_ACTIVIDADES.ID_SOLICITANTE IS 'Es el campo que identifica la llave foranea de la tabla solicitante.';
 
 CREATE TABLE AUX_CUMPLIMIENTO_ACTIVIDADES(
+/* SE AGREGA EST? LLAVE PRIMARIA (LA PEDIA NETBEANS) ADEM?S TODA ENTIDADE DEBE TENER LLAVE PRIMARIA (NORMALIZACI?N) */
+AUX_CUMP_ACTIVIDADES_ID NUMBER(20) NOT NULL,
 ID_AUXILIAR VARCHAR2 (20) NOT NULL,
 ID_CUMPLIMIENTO_ACTIVIDADES VARCHAR2 (20) NOT NULL,
 ID_TIPO_AUXILIAR VARCHAR2 (20) NOT NULL,
+CONSTRAINT PK_AUX_CUMP_ATIVIDADES PRIMARY KEY (AUX_CUMP_ACTIVIDADES_ID),
 CONSTRAINT FK_AUX_EN_AUX_CUMP_ACT FOREIGN KEY (ID_AUXILIAR) REFERENCES AUXILIAR (AUXILIAR_ID),
 CONSTRAINT FK_CUMP_ACT_EN_AUX_CUMP_ACT FOREIGN KEY (ID_CUMPLIMIENTO_ACTIVIDADES) REFERENCES CUMPLIMIENTO_ACTIVIDADES (CUMP_ACT_ID),
 CONSTRAINT FK_TIPO_AUX_EN_AUX_CUMP_ACT FOREIGN KEY (ID_TIPO_AUXILIAR) REFERENCES TIPO_AUXILIAR (TIPO_AUXILIAR_ID)
 );
 COMMENT ON TABLE AUX_CUMPLIMIENTO_ACTIVIDADES IS 'Es la entidad PUENTE que representa el auxiliar con el cumplimiento de actividades.';
+COMMENT ON COLUMN AUX_CUMPLIMIENTO_ACTIVIDADES.AUX_CUMP_ACTIVIDADES_ID IS 'Es la llave primaria de la entidad puente que representa el auxiliar con el cumplimiento de actividades.';
 COMMENT ON COLUMN AUX_CUMPLIMIENTO_ACTIVIDADES.ID_AUXILIAR IS 'Es el campo que identifica la llave foranea de la tabla auxiliar.';
 COMMENT ON COLUMN AUX_CUMPLIMIENTO_ACTIVIDADES.ID_CUMPLIMIENTO_ACTIVIDADES IS 'Es el campo que identifica la llave foranea de la tabla cumplimiento de actividades.';
 COMMENT ON COLUMN AUX_CUMPLIMIENTO_ACTIVIDADES.ID_TIPO_AUXILIAR IS 'Es el campo que identifica la llave foranea de la tabla tipo de solicitante.';
@@ -418,18 +426,22 @@ CONSTRAINT PK_INCONFORMIDAD_AUXILIARES PRIMARY KEY (INCONFORMIDAD_AUXILIARES_ID)
 );
 COMMENT ON TABLE INCONFORMIDAD_AUXILIARES IS 'Es la entidad que representa la inconformidad de los auxiliares.';
 COMMENT ON COLUMN INCONFORMIDAD_AUXILIARES.INCONFORMIDAD_AUXILIARES_ID IS 'Es llave primaria que identifica  la inconformidad de los auxiliares.';
-COMMENT ON COLUMN INCONFORMIDAD_AUXILIARES.FECHA_CREA_INC_AUX IS 'Es el campo que identifica a la fecha de creación inconformidad de los auxiliares.';
-COMMENT ON COLUMN INCONFORMIDAD_AUXILIARES.DESC_INC_AUX IS 'Es el campo que identifica a la descripción  de inconformidad de los auxiliares.';
+COMMENT ON COLUMN INCONFORMIDAD_AUXILIARES.FECHA_CREA_INC_AUX IS 'Es el campo que identifica a la fecha de creaci?n inconformidad de los auxiliares.';
+COMMENT ON COLUMN INCONFORMIDAD_AUXILIARES.DESC_INC_AUX IS 'Es el campo que identifica a la descripci?n  de inconformidad de los auxiliares.';
 
 CREATE TABLE INC_AUX_AUXILIAR(
+/* SE AGREGA EST? LLAVE PRIMARIA (LA PEDIA NETBEANS) ADEM?S TODA ENTIDADE DEBE TENER LLAVE PRIMARIA (NORMALIZACI?N) */
+INC_AUX_AUXILIAR_ID NUMBER(20) NOT NULL,
 ID_INCONFORMIDAD_AUXILIARES VARCHAR2 (20) NOT NULL,
 ID_AUXILIAR VARCHAR2 (20) NOT NULL,
 ID_SOLICITANTE VARCHAR2 (20) NOT NULL,
+CONSTRAINT PK_INC_AUX_AUXILIAR PRIMARY KEY (INC_AUX_AUXILIAR_ID),
 CONSTRAINT FK_INC_AUX_EN_INC_AUX_AUX FOREIGN KEY (ID_INCONFORMIDAD_AUXILIARES) REFERENCES INCONFORMIDAD_AUXILIARES (INCONFORMIDAD_AUXILIARES_ID),
 CONSTRAINT FK_AUX_EN_INC_AUX_AUX FOREIGN KEY (ID_AUXILIAR) REFERENCES AUXILIAR (AUXILIAR_ID),
 CONSTRAINT FK_SOL_EN_INC_AUX_AUX FOREIGN KEY (ID_SOLICITANTE) REFERENCES SOLICITANTE (SOLICITANTE_ID)
 );
 COMMENT ON TABLE INC_AUX_AUXILIAR IS 'Es la entidad PUENTE que representa la inconformidad de auxiliares con auxiliares.';
+COMMENT ON COLUMN INC_AUX_AUXILIAR.INC_AUX_AUXILIAR_ID IS 'Es la llave primara de la entidad que representa la inconformidad de auxiliares con auxiliares.';
 COMMENT ON COLUMN INC_AUX_AUXILIAR.ID_INCONFORMIDAD_AUXILIARES IS 'Es el campo que identifica la llave foranea de la tabla inconformidad de auxiliares.';
 COMMENT ON COLUMN INC_AUX_AUXILIAR.ID_AUXILIAR IS 'Es el campo que identifica la llave foranea de la tabla auxiliar.';
 COMMENT ON COLUMN INC_AUX_AUXILIAR.ID_SOLICITANTE IS 'Es el campo que identifica la llave foranea de la tabla solicitante.';
@@ -442,6 +454,6 @@ CONSTRAINT PK_INSCRIPCION_CONVOCATORIA PRIMARY KEY (ID_AUXILIAR, ID_CONVOCATORIA
 CONSTRAINT FK_AUX_EN_INSC_CONV FOREIGN KEY (ID_AUXILIAR) REFERENCES AUXILIAR (AUXILIAR_ID),
 CONSTRAINT FK_CONV_EN_INSC_CONV FOREIGN KEY (ID_CONVOCATORIA) REFERENCES CONVOCATORIA (CONVOCATORIA_ID)
 );
-COMMENT ON TABLE INSCRIPCION_CONVOCATORIA IS 'Es la entidad PUENTE que representa la inscripción a la convocatoria (Convocatoria-Auxiliares).';
+COMMENT ON TABLE INSCRIPCION_CONVOCATORIA IS 'Es la entidad PUENTE que representa la inscripci?n a la convocatoria (Convocatoria-Auxiliares).';
 COMMENT ON COLUMN INSCRIPCION_CONVOCATORIA.ID_AUXILIAR IS 'Es el campo que identifica la llave foranea de la tabla auxiliar.';
 COMMENT ON COLUMN INSCRIPCION_CONVOCATORIA.ID_CONVOCATORIA  IS 'Es el campo que identifica la llave foranea de la tabla convocatoria.';
