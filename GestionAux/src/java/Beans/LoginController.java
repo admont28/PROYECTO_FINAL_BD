@@ -11,6 +11,8 @@ import Controller.AreaJpaController;
 import Controller.LoginJpaController;
 import Entities.Area;
 import Entities.Auxiliar;
+import Entities.Secretaria;
+import Entities.Solicitante;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
@@ -45,10 +47,16 @@ public class LoginController {
     */ 
     public String login(){
        Object login = getJpaController().validacionLogin(id, password);
-       if(login instanceof Auxiliar){
-           return "index";
+       if(login != null){
+            if(login instanceof Auxiliar){
+                return "/Pages/auxiliar/List";
+            }else if(login instanceof Solicitante){
+                return "/Pages/solicitante/List";
+            }else if(login instanceof Secretaria){
+                return "/Pages/secretaria/List";
+            }
        }
-       return "/login";
+       return "login";
     }
 
     public LoginJpaController getJpaController() {

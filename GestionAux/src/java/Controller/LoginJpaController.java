@@ -37,30 +37,44 @@ public class LoginJpaController implements Serializable{
     public Object validacionLogin(String id, String password){
         try {
             EntityManager em = getEntityManager();
+            Auxiliar aux = null;
+            Solicitante sol = null;
+            Secretaria secre = null;
+            String passwordConsulta = "";
             /*
             Auxiliar
             Solicitante
             Secretaria
             Consejo Currilar - pendiente
             */
-            Query q = em.createQuery("SELECT a.password FROM Auxiliar a WHERE a.codigoAuxiliar = :COD_AUX");
+            Query q = em.createQuery("SELECT a FROM Auxiliar a WHERE a.codigoAuxiliar = :COD_AUX");
             q.setParameter("COD_AUX", id);
-            String resultado = (String) q.getSingleResult();
-            String passEncrypt = md5(password);
-            if(passEncrypt.equals(resultado)){
-                return Auxiliar.class;
+            Object consulta =  q.getSingleResult();
+            String passEncrypt = password;
+            if(consulta instanceof Auxiliar){
+                 aux  = (Auxiliar) consulta;
+                passwordConsulta = aux.getPasswordAux();
+                
+                if(passEncrypt.equals(passwordConsulta))  
+                    return aux;
             }else{
-               q = em.createQuery("SELECT s.password FROM Solicitante s WHERE s.solicitanteId = :SOL_ID");
+               q = em.createQuery("SELECT s FROM Solicitante s WHERE s.solicitanteId = :SOL_ID");
                q.setParameter("SOL_ID", id);
-               resultado = (String) q.getSingleResult();
-               if(passEncrypt.equals(id)){
-                   return Solicitante.class;
+               consulta =  q.getSingleResult();
+               if(consulta instanceof Solicitante){
+                   sol = (Solicitante) consulta;
+                   passwordConsulta = sol.getPasswordSolicitante();
+                   if(passEncrypt.equals(passwordConsulta))
+                       return sol;
                }else{
-                   q = em.createQuery("SELECT secre.password FROM Secretaria secre WHERE secre.secretariaId :SECRE_ID");
+                   q = em.createQuery("SELECT secre FROM Secretaria secre WHERE secre.secretariaId :SECRE_ID");
                    q.setParameter("SECRE_ID", id);
-                   resultado = (String) q.getSingleResult();
-                   if(passEncrypt.equals(resultado)){
-                       return Secretaria.class;
+                   consulta = q.getSingleResult();
+                   if(consulta instanceof Secretaria){
+                       secre = (Secretaria) consulta;
+                       passwordConsulta = secre.getPasswordSecretaria();
+                       if(passEncrypt.equals(passwordConsulta))
+                       return secre;
                    }
                }
             }
@@ -69,7 +83,7 @@ public class LoginJpaController implements Serializable{
             System.out.println("Error en encriptación");
             Logger.getLogger(LoginJpaController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return false;
+        return null;
     }
     
     
