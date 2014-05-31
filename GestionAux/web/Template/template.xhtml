@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+       
+        <title> <h:outputText value="#{bundle.title}"></h:outputText></title>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+    </h:head>
+    <!--
+    <h:body>
+        <h1>
+            <ui:insert name="title">Default Title</ui:insert>
+        </h1>
+        <p>
+            <ui:insert name="body">Default Body</ui:insert>
+        </p>
+    </h:body>
+    -->
+
+<body background="#{resource['/Images/Acceso Restringido.jpg']}">
+	<ui:insert name="login">
+		<ui:include src="/login.xhtml" />
+	</ui:insert>
+
+	<!-- 
+        <div id="header">
+		<h:panelGroup rendered="#{loginBean.autenticado}">
+			<p:growl id="mensaje" showDetail="true" life="5000" />
+			<ui:insert name="header">
+				<p:panel>
+					<p:panelGrid columns="4">
+						<p:commandButton id="cerrar" value="Cerrar Sesión"
+							action="#{loginBean.cerrarSesion}" />
+						<ui:insert name="tipoRol">
+							<p:outputLabel value="Tipo de Rol" />
+						</ui:insert>
+						<p:graphicImage url="#{resource['shield.jpg']}"
+							style="float:right;" />
+					</p:panelGrid>
+				</p:panel>
+			</ui:insert>
+		</h:panelGroup>
+	</div>
+         
+	<div style="height: 823px;">
+		<h:panelGroup id="panelGroupContent"
+			rendered="#{loginBean.autenticado}">
+			<p:tabView id="tabViewContent" orientation="top">
+				<ui:insert name="tabs">
+				</ui:insert>
+			</p:tabView>
+		</h:panelGroup>
+	</div>
+
+	<div id="footer">
+		<h:panelGroup rendered="#{loginBean.autenticado}">
+			<p:panelGrid columns="2">
+				<p:outputLabel value="Empresa de seguridad Shield. " />
+				<p:outputLabel value="Copyright © Todos los Derechos Reservados." />
+			</p:panelGrid>
+		</h:panelGroup>
+	</div>
+        -->
+</body>
+
+</html>
