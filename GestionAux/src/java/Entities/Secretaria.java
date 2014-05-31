@@ -48,9 +48,11 @@ public class Secretaria implements Serializable {
     @Basic(optional = false)
     @Column(name = "TELEFONO_SECRETARIA", nullable = false, length = 20)
     private String telefonoSecretaria;
+
     @Basic(optional = false)
     @Column(name = "PASSWORD_SECRETARIA", nullable = false, length = 255)
     private String passwordSecretaria;
+
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "idSecretaria", fetch = FetchType.LAZY)
     private ConsejoCurricular consejoCurricular;
 
@@ -108,7 +110,7 @@ public class Secretaria implements Serializable {
     public void setPasswordSecretaria(String passwordSecretaria) {
         this.passwordSecretaria = passwordSecretaria;
     }
-
+    
     public ConsejoCurricular getConsejoCurricular() {
         return consejoCurricular;
     }
