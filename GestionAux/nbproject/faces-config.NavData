@@ -2,8 +2,8 @@
 <Scene Scope="Project" version="2">
     <Scope Scope="Faces Configuration Only"/>
     <Scope Scope="Project">
-        <Node id="Pages/auxCumplimientoActividades/Edit.xhtml" x="150" y="1350" zoom="true"/>
         <Node id="Pages/tipoRequisito/List.xhtml" x="1150" y="1200" zoom="true"/>
+        <Node id="Pages/auxCumplimientoActividades/Edit.xhtml" x="150" y="1350" zoom="true"/>
         <Node id="Pages/inconformidadAuxiliares/Edit.xhtml" x="2400" y="900" zoom="true"/>
         <Node id="Pages/tipoAuxiliar/Edit.xhtml" x="650" y="450" zoom="true"/>
         <Node id="Pages/facultad/Edit.xhtml" x="2650" y="750" zoom="true"/>
@@ -47,16 +47,16 @@
         <Node id="Pages/programaAcademico/View.xhtml" x="150" y="750" zoom="true"/>
         <Node id="Pages/detalleResolucion/Create.xhtml" x="1150" y="600" zoom="true"/>
         <Node id="Pages/hora/Create.xhtml" x="1900" y="750" zoom="true"/>
+        <Node id="Pages/solicitante/Edit.xhtml" x="900" y="1350" zoom="true"/>
         <Node id="Pages/hora/Edit.xhtml" x="2650" y="600" zoom="true"/>
         <Node id="Pages/area/Create.xhtml" x="150" y="150" zoom="true"/>
-        <Node id="Pages/solicitante/Edit.xhtml" x="900" y="1350" zoom="true"/>
         <Node id="login.xhtml" x="650" y="1500" zoom="true"/>
         <Node id="Pages/fechaHorario/List.xhtml" x="400" y="1350" zoom="true"/>
         <Node id="Pages/resAuxiliaresSeleccionados/View.xhtml" x="1150" y="900" zoom="true"/>
         <Node id="Pages/inscripcionConvocatoria/View.xhtml" x="2650" y="150" zoom="true"/>
         <Node id="Pages/resAuxiliaresSeleccionados/Create.xhtml" x="1650" y="750" zoom="true"/>
-        <Node id="Pages/ciudad/List.xhtml" x="400" y="600" zoom="true"/>
         <Node id="Pages/auxiliar/Create.xhtml" x="900" y="600" zoom="true"/>
+        <Node id="Pages/ciudad/List.xhtml" x="400" y="600" zoom="true"/>
         <Node id="Pages/evaluacionAuxiliares/Edit.xhtml" x="400" y="150" zoom="true"/>
         <Node id="Pages/horarioActividades/List.xhtml" x="400" y="1500" zoom="true"/>
         <Node id="Pages/jornada/Edit.xhtml" x="2150" y="900" zoom="true"/>
@@ -67,14 +67,14 @@
         <Node id="Pages/inscripcionConvocatoria/Create.xhtml" x="150" y="300" zoom="true"/>
         <Node id="Pages/detalleResolucion/Edit.xhtml" x="900" y="750" zoom="true"/>
         <Node id="Pages/evaluacionAuxiliares/Create.xhtml" x="2650" y="450" zoom="true"/>
-        <Node id="Pages/detalleResolucion/View.xhtml" x="3400" y="150" zoom="true"/>
         <Node id="Pages/directores/List.xhtml" x="2150" y="1050" zoom="true"/>
+        <Node id="Pages/detalleResolucion/View.xhtml" x="3400" y="150" zoom="true"/>
         <Node id="Pages/secretaria/Create.xhtml" x="1400" y="300" zoom="true"/>
         <Node id="Pages/area/List.xhtml" x="1400" y="600" zoom="true"/>
         <Node id="Pages/seleccionAuxiliares/Edit.xhtml" x="150" y="1950" zoom="true"/>
         <Node id="Pages/auxCumplimientoActividades/List.xhtml" x="2150" y="300" zoom="true"/>
-        <Node id="Pages/universidad/Edit.xhtml" x="650" y="1050" zoom="true"/>
         <Node id="Pages/ciudad/View.xhtml" x="150" y="2100" zoom="true"/>
+        <Node id="Pages/universidad/Edit.xhtml" x="650" y="1050" zoom="true"/>
         <Node id="Pages/cargo/List.xhtml" x="1150" y="750" zoom="true"/>
         <Node id="Pages/tipoAuxiliar/Create.xhtml" x="2900" y="150" zoom="true"/>
         <Node id="Pages/tipoRequisito/Edit.xhtml" x="900" y="1800" zoom="true"/>
@@ -84,16 +84,16 @@
         <Node id="Pages/universidad/View.xhtml" x="2900" y="300" zoom="true"/>
         <Node id="Pages/inscripcionConvocatoria/List.xhtml" x="400" y="1950" zoom="true"/>
         <Node id="Pages/horarioActividades/Create.xhtml" x="650" y="1200" zoom="true"/>
-        <Node id="Pages/cargo/Edit.xhtml" x="400" y="750" zoom="true"/>
         <Node id="Pages/hora/List.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="Pages/cargo/Edit.xhtml" x="400" y="750" zoom="true"/>
         <Node id="Pages/area/Edit.xhtml" x="1400" y="750" zoom="true"/>
         <Node id="Pages/solicitudAuxiliares/View.xhtml" x="1150" y="1050" zoom="true"/>
         <Node id="Pages/evaluacionAuxiliares/View.xhtml" x="1900" y="300" zoom="true"/>
         <Node id="Pages/consejoCurricular/Create.xhtml" x="1900" y="1050" zoom="true"/>
         <Node id="Pages/tipoAuxiliar/View.xhtml" x="2400" y="300" zoom="true"/>
         <Node id="Pages/requisito/List.xhtml" x="2400" y="750" zoom="true"/>
-        <Node id="Pages/secretaria/View.xhtml" x="3400" y="450" zoom="true"/>
         <Node id="Pages/fechaHorario/Edit.xhtml" x="150" y="1500" zoom="true"/>
+        <Node id="Pages/secretaria/View.xhtml" x="3400" y="450" zoom="true"/>
         <Node id="Pages/jornada/View.xhtml" x="1150" y="150" zoom="true"/>
         <Node id="Pages/fechaHorario/Create.xhtml" x="1400" y="150" zoom="true"/>
         <Node id="Pages/horarioActividades/View.xhtml" x="3900" y="150" zoom="true"/>
@@ -111,12 +111,12 @@
         <Node id="Pages/convocatoria/View.xhtml" x="2400" y="450" zoom="true"/>
         <Node id="Pages/ciudad/Create.xhtml" x="1400" y="1200" zoom="true"/>
         <Node id="Pages/tipoRequisito/View.xhtml" x="400" y="2100" zoom="true"/>
-        <Node id="Pages/evaluacionAuxiliares/List.xhtml" x="400" y="900" zoom="true"/>
         <Node id="Pages/programaAcademico/Create.xhtml" x="1650" y="300" zoom="true"/>
-        <Node id="Pages/facultad/Create.xhtml" x="2150" y="750" zoom="true"/>
+        <Node id="Pages/evaluacionAuxiliares/List.xhtml" x="400" y="900" zoom="true"/>
         <Node id="Pages/solicitudAuxiliares/Edit.xhtml" x="2650" y="300" zoom="true"/>
-        <Node id="Pages/cumplimientoActividades/View.xhtml" x="650" y="900" zoom="true"/>
         <Node id="Pages/auxCumplimientoActividades/Create.xhtml" x="150" y="2250" zoom="true"/>
+        <Node id="Pages/cumplimientoActividades/View.xhtml" x="650" y="900" zoom="true"/>
+        <Node id="Pages/facultad/Create.xhtml" x="2150" y="750" zoom="true"/>
         <Node id="Pages/fechaHorario/View.xhtml" x="400" y="1800" zoom="true"/>
         <Node id="Pages/solicitante/List.xhtml" x="150" y="1800" zoom="true"/>
         <Node id="Pages/horarioActividades/Edit.xhtml" x="650" y="600" zoom="true"/>
