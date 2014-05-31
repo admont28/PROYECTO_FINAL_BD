@@ -85,8 +85,8 @@ public class InscripcionConvocatoriaController implements Serializable {
 
     public String create() {
         try {
-            current.getInscripcionConvocatoriaPK().setIdAuxiliar(current.getAuxiliar().getAuxiliarId());
             current.getInscripcionConvocatoriaPK().setIdConvocatoria(current.getConvocatoria().getConvocatoriaId());
+            current.getInscripcionConvocatoriaPK().setIdAuxiliar(current.getAuxiliar().getAuxiliarId());
             getJpaController().create(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("InscripcionConvocatoriaCreated"));
             return prepareCreate();
@@ -104,8 +104,8 @@ public class InscripcionConvocatoriaController implements Serializable {
 
     public String update() {
         try {
-            current.getInscripcionConvocatoriaPK().setIdAuxiliar(current.getAuxiliar().getAuxiliarId());
             current.getInscripcionConvocatoriaPK().setIdConvocatoria(current.getConvocatoria().getConvocatoriaId());
+            current.getInscripcionConvocatoriaPK().setIdAuxiliar(current.getAuxiliar().getAuxiliarId());
             getJpaController().edit(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("InscripcionConvocatoriaUpdated"));
             return "View";

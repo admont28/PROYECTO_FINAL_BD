@@ -38,7 +38,8 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Auxiliar.findByCodigoAuxiliar", query = "SELECT a FROM Auxiliar a WHERE a.codigoAuxiliar = :codigoAuxiliar"),
     @NamedQuery(name = "Auxiliar.findByNombreAuxiliar", query = "SELECT a FROM Auxiliar a WHERE a.nombreAuxiliar = :nombreAuxiliar"),
     @NamedQuery(name = "Auxiliar.findByApellidoAuxiliar", query = "SELECT a FROM Auxiliar a WHERE a.apellidoAuxiliar = :apellidoAuxiliar"),
-    @NamedQuery(name = "Auxiliar.findByTelefonoAuxiliar", query = "SELECT a FROM Auxiliar a WHERE a.telefonoAuxiliar = :telefonoAuxiliar")})
+    @NamedQuery(name = "Auxiliar.findByTelefonoAuxiliar", query = "SELECT a FROM Auxiliar a WHERE a.telefonoAuxiliar = :telefonoAuxiliar"),
+    @NamedQuery(name = "Auxiliar.findByPasswordAux", query = "SELECT a FROM Auxiliar a WHERE a.passwordAux = :passwordAux")})
 public class Auxiliar implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -57,6 +58,9 @@ public class Auxiliar implements Serializable {
     @Basic(optional = false)
     @Column(name = "TELEFONO_AUXILIAR", nullable = false, length = 20)
     private String telefonoAuxiliar;
+    @Basic(optional = false)
+    @Column(name = "PASSWORD_AUX", nullable = false, length = 255)
+    private String passwordAux;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idAuxiliares", fetch = FetchType.LAZY)
     private List<SeleccionAuxiliares> seleccionAuxiliaresList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "auxiliar", fetch = FetchType.LAZY)
@@ -83,12 +87,13 @@ public class Auxiliar implements Serializable {
         this.auxiliarId = auxiliarId;
     }
 
-    public Auxiliar(String auxiliarId, String codigoAuxiliar, String nombreAuxiliar, String apellidoAuxiliar, String telefonoAuxiliar) {
+    public Auxiliar(String auxiliarId, String codigoAuxiliar, String nombreAuxiliar, String apellidoAuxiliar, String telefonoAuxiliar, String passwordAux) {
         this.auxiliarId = auxiliarId;
         this.codigoAuxiliar = codigoAuxiliar;
         this.nombreAuxiliar = nombreAuxiliar;
         this.apellidoAuxiliar = apellidoAuxiliar;
         this.telefonoAuxiliar = telefonoAuxiliar;
+        this.passwordAux = passwordAux;
     }
 
     public String getAuxiliarId() {
@@ -129,6 +134,14 @@ public class Auxiliar implements Serializable {
 
     public void setTelefonoAuxiliar(String telefonoAuxiliar) {
         this.telefonoAuxiliar = telefonoAuxiliar;
+    }
+
+    public String getPasswordAux() {
+        return passwordAux;
+    }
+
+    public void setPasswordAux(String passwordAux) {
+        this.passwordAux = passwordAux;
     }
 
     @XmlTransient

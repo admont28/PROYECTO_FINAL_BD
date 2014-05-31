@@ -85,8 +85,8 @@ public class DirectoresController implements Serializable {
 
     public String create() {
         try {
-            current.getDirectoresPK().setIdPrograma(current.getProgramaAcademico().getProgramaAcademicoId());
             current.getDirectoresPK().setIdJornada(current.getJornada().getJornadaId());
+            current.getDirectoresPK().setIdPrograma(current.getProgramaAcademico().getProgramaAcademicoId());
             getJpaController().create(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("DirectoresCreated"));
             return prepareCreate();
@@ -104,8 +104,8 @@ public class DirectoresController implements Serializable {
 
     public String update() {
         try {
-            current.getDirectoresPK().setIdPrograma(current.getProgramaAcademico().getProgramaAcademicoId());
             current.getDirectoresPK().setIdJornada(current.getJornada().getJornadaId());
+            current.getDirectoresPK().setIdPrograma(current.getProgramaAcademico().getProgramaAcademicoId());
             getJpaController().edit(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("DirectoresUpdated"));
             return "View";

@@ -40,8 +40,8 @@ public class InscripcionConvocatoriaJpaController implements Serializable {
         if (inscripcionConvocatoria.getInscripcionConvocatoriaPK() == null) {
             inscripcionConvocatoria.setInscripcionConvocatoriaPK(new InscripcionConvocatoriaPK());
         }
-        inscripcionConvocatoria.getInscripcionConvocatoriaPK().setIdAuxiliar(inscripcionConvocatoria.getAuxiliar().getAuxiliarId());
         inscripcionConvocatoria.getInscripcionConvocatoriaPK().setIdConvocatoria(inscripcionConvocatoria.getConvocatoria().getConvocatoriaId());
+        inscripcionConvocatoria.getInscripcionConvocatoriaPK().setIdAuxiliar(inscripcionConvocatoria.getAuxiliar().getAuxiliarId());
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -79,8 +79,8 @@ public class InscripcionConvocatoriaJpaController implements Serializable {
     }
 
     public void edit(InscripcionConvocatoria inscripcionConvocatoria) throws NonexistentEntityException, Exception {
-        inscripcionConvocatoria.getInscripcionConvocatoriaPK().setIdAuxiliar(inscripcionConvocatoria.getAuxiliar().getAuxiliarId());
         inscripcionConvocatoria.getInscripcionConvocatoriaPK().setIdConvocatoria(inscripcionConvocatoria.getConvocatoria().getConvocatoriaId());
+        inscripcionConvocatoria.getInscripcionConvocatoriaPK().setIdAuxiliar(inscripcionConvocatoria.getAuxiliar().getAuxiliarId());
         EntityManager em = null;
         try {
             em = getEntityManager();

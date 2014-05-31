@@ -85,8 +85,8 @@ public class DetalleResolucionController implements Serializable {
 
     public String create() {
         try {
-            current.getDetalleResolucionPK().setIdResAuxSel(current.getResAuxiliaresSeleccionados().getResAuxSelId());
             current.getDetalleResolucionPK().setIdAuxiliar(current.getAuxiliar().getAuxiliarId());
+            current.getDetalleResolucionPK().setIdResAuxSel(current.getResAuxiliaresSeleccionados().getResAuxSelId());
             getJpaController().create(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("DetalleResolucionCreated"));
             return prepareCreate();
@@ -104,8 +104,8 @@ public class DetalleResolucionController implements Serializable {
 
     public String update() {
         try {
-            current.getDetalleResolucionPK().setIdResAuxSel(current.getResAuxiliaresSeleccionados().getResAuxSelId());
             current.getDetalleResolucionPK().setIdAuxiliar(current.getAuxiliar().getAuxiliarId());
+            current.getDetalleResolucionPK().setIdResAuxSel(current.getResAuxiliaresSeleccionados().getResAuxSelId());
             getJpaController().edit(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("DetalleResolucionUpdated"));
             return "View";
