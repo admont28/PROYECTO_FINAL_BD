@@ -1,4 +1,6 @@
+GestionAux/build/
+GestionAux\build\
 GestionAux/nbproject/
-.DS_Store
-build.xml
 GestionAux\nbproject\
+build.xml
+.DS_Store
