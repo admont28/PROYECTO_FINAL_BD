@@ -5,8 +5,6 @@
         <group>
             <file>file:/Applications/XAMPP/htdocs/PROYECTO_FINAL_BD/GestionAux/web/index.xhtml</file>
             <file>file:/Applications/XAMPP/htdocs/PROYECTO_FINAL_BD/GestionAux/web/welcomePrimefaces.xhtml</file>
-            <file>file:/Applications/XAMPP/htdocs/PROYECTO_FINAL_BD/GestionAux/src/java/Beans/AreaController.java</file>
-            <file>file:/Applications/XAMPP/htdocs/PROYECTO_FINAL_BD/GestionAux/web/login.xhtml</file>
             <file>file:/Applications/XAMPP/htdocs/PROYECTO_FINAL_BD/GestionAux/src/java/Beans/LoginController.java</file>
             <file>file:/Applications/XAMPP/htdocs/PROYECTO_FINAL_BD/GestionAux/src/java/Bundle.properties</file>
             <file>file:/Applications/XAMPP/htdocs/PROYECTO_FINAL_BD/GestionAux/src/java/Controller/LoginJpaController.java</file>
