@@ -1,4 +1,5 @@
-GestionAux/nbproject/
-GestionAux/build/
+GestionAuxiliares/nbproject/
+GestionAuxiliares/build/
 build.xml
 .DS_Store
+/GestionAuxiliares/nbproject/private/
