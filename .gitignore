@@ -1,7 +1,4 @@
-GestionAux/build/
 GestionAux/nbproject/
-/GestionAux/nbproject/project.properties
-/GestionAux/nbproject/private/private.properties
-/GestionAux/nbproject/private/*.xml
+GestionAux/build/
 build.xml
 .DS_Store
