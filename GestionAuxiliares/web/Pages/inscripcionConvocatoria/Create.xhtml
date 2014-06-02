@@ -17,7 +17,7 @@
                 <h:panelGrid columns="2">
                     <h:outputLabel value="#{bundle.CreateInscripcionConvocatoriaLabel_fechaInscripcionConvocatoria}" for="fechaInscripcionConvocatoria" />
                     <h:inputText id="fechaInscripcionConvocatoria" value="#{inscripcionConvocatoriaController.selected.fechaInscripcionConvocatoria}" title="#{bundle.CreateInscripcionConvocatoriaTitle_fechaInscripcionConvocatoria}" required="true" requiredMessage="#{bundle.CreateInscripcionConvocatoriaRequiredMessage_fechaInscripcionConvocatoria}">
-                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.CreateInscripcionConvocatoriaLabel_convocatoria}" for="convocatoria" />
                     <h:selectOneMenu id="convocatoria" value="#{inscripcionConvocatoriaController.selected.convocatoria}" title="#{bundle.CreateInscripcionConvocatoriaTitle_convocatoria}" required="true" requiredMessage="#{bundle.CreateInscripcionConvocatoriaRequiredMessage_convocatoria}">

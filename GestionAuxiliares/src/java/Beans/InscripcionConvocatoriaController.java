@@ -67,20 +67,20 @@ public class InscripcionConvocatoriaController implements Serializable {
 
     public String prepareList() {
         recreateModel();
-        return "List";
+        return "/Pages/inscripcionConvocatoria/List";
     }
 
     public String prepareView() {
         current = (InscripcionConvocatoria) getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
-        return "View";
+        return "/Pages/inscripcionConvocatoria/View";
     }
 
     public String prepareCreate() {
         current = new InscripcionConvocatoria();
         current.setInscripcionConvocatoriaPK(new Entities.InscripcionConvocatoriaPK());
         selectedItemIndex = -1;
-        return "Create";
+        return "/Pages/inscripcionConvocatoria/Create";
     }
 
     public String create() {
@@ -99,7 +99,7 @@ public class InscripcionConvocatoriaController implements Serializable {
     public String prepareEdit() {
         current = (InscripcionConvocatoria) getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
-        return "Edit";
+        return "/Pages/inscripcionConvocatoria/Edit";
     }
 
     public String update() {
@@ -108,7 +108,7 @@ public class InscripcionConvocatoriaController implements Serializable {
             current.getInscripcionConvocatoriaPK().setIdAuxiliar(current.getAuxiliar().getAuxiliarId());
             getJpaController().edit(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("InscripcionConvocatoriaUpdated"));
-            return "View";
+            return "/Pages/inscripcionConvocatoria/View";
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
             return null;
@@ -121,7 +121,7 @@ public class InscripcionConvocatoriaController implements Serializable {
         performDestroy();
         recreatePagination();
         recreateModel();
-        return "List";
+        return "/Pages/inscripcionConvocatoria/List";
     }
 
     public String destroyAndView() {
@@ -129,11 +129,11 @@ public class InscripcionConvocatoriaController implements Serializable {
         recreateModel();
         updateCurrentItem();
         if (selectedItemIndex >= 0) {
-            return "View";
+            return "/Pages/inscripcionConvocatoria/View";
         } else {
             // all items were removed - go back to list
             recreateModel();
-            return "List";
+            return "/Pages/inscripcionConvocatoria/List";
         }
     }
 

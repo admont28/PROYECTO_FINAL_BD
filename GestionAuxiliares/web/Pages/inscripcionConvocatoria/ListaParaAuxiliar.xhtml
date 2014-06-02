@@ -40,23 +40,10 @@
                             </f:facet>
                             <h:outputText value="#{item.auxiliar}"/>
                         </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="&nbsp;"/>
-                            </f:facet>
-                            <h:commandLink action="#{inscripcionConvocatoriaController.prepareView}" value="#{bundle.ListInscripcionConvocatoriaViewLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink action="#{inscripcionConvocatoriaController.prepareEdit}" value="#{bundle.ListInscripcionConvocatoriaEditLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink action="#{inscripcionConvocatoriaController.destroy}" value="#{bundle.ListInscripcionConvocatoriaDestroyLink}"/>
-                        </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
                 <h:commandLink action="#{inscripcionConvocatoriaController.prepareCreate}" value="#{bundle.ListInscripcionConvocatoriaCreateLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ListInscripcionConvocatoriaIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

@@ -13,26 +13,35 @@
         
         <p:accordionPanel>
             <p:tab title="Convocatorias">
-                <h:panelGrid columns="2" cellpadding="10">
+                <h:panelGrid columns="1" cellpadding="10">
                     <!-- <p:graphicImage name="demo/images/godfather/godfather1.jpg" /> 
                     <h:outputText
                         value="The story begins as Don Vito Corleone..." />
                     -->
                     <ui:insert name="ListConvocatoria">
-                    <ui:include src="/Pages/convocatoria/List.xhtml" />
+                        <ui:include src="/Pages/convocatoria/ListarSencillo.xhtml" />
                     </ui:insert>
                 </h:panelGrid>
             </p:tab>
-            <p:tab title="Godfather Part II">
+            <p:tab title="Inscripción a Convocatoria">
                 <h:panelGrid columns="2" cellpadding="10">
-                   
-                    <h:outputText value="Francis Ford Coppola's legendary..." />
+                    <ui:insert name="ListConvocatoria">
+                        <ui:include src="/Pages/inscripcionConvocatoria/ListaParaAuxiliar.xhtml" />
+                    </ui:insert>
                 </h:panelGrid>
             </p:tab>
-            <p:tab title="Godfather Part III">
+            <p:tab title="Evaluaciones de Auxiliares">
+                <h:panelGrid columns="1" cellpadding="10">
+                    <ui:insert name="ListConvocatoria">
+                        <ui:include src="/Pages/evaluacionAuxiliares/ListarSencillo.xhtml" />
+                    </ui:insert>
+                </h:panelGrid>
+            </p:tab>
+            <p:tab title="Inscripción a Convocatoria">
                 <h:panelGrid columns="2" cellpadding="10">
-                    
-                    <h:outputText value="After a break of more than 15 years..." />
+                    <ui:insert name="ListConvocatoria">
+                        <ui:include src="/Pages/inscripcionConvocatoria/List.xhtml" />
+                    </ui:insert>
                 </h:panelGrid>
             </p:tab>
         </p:accordionPanel>

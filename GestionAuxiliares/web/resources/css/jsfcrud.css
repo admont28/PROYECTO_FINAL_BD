@@ -55,8 +55,9 @@ table {
 }
 
 form.jsfcrud_list_form th, td th {
-    font-size: x-small;
-    color: #4e6a71;
+    font-family: sans-serif;
+    font-size: 11pt;
+    color: #3B4055;
     border-top-style: solid;
     border-bottom-style: solid;
     border-left-style: solid;
@@ -69,16 +70,13 @@ form.jsfcrud_list_form th, td th {
     border-bottom-color: #b2d5d6;
     border-left-color: #90b4bd;
     border-right-color: #90b4bd;
-    letter-spacing: 3px;
-    text-align: left;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    padding-left: 6px;
-    padding-right: 6px;
-    background-color: #b2d5d6;
+    text-align: center;
+    padding: 4px;
+    background-color: #E3E3E3;
 }
 
 td {
+    text-align: center;
     vertical-align: top;
     padding-bottom: 8px;
     font-size: small;
