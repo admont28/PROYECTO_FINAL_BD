@@ -25,22 +25,23 @@
             </p:tab>
             <p:tab title="Inscripción a Convocatoria">
                 <h:panelGrid columns="2" cellpadding="10">
-                    <ui:insert name="ListConvocatoria">
+                    <ui:insert name="ListInscripcionConvocatoria">
                         <ui:include src="/Pages/inscripcionConvocatoria/ListaParaAuxiliar.xhtml" />
                     </ui:insert>
                 </h:panelGrid>
             </p:tab>
             <p:tab title="Evaluaciones de Auxiliares">
                 <h:panelGrid columns="1" cellpadding="10">
-                    <ui:insert name="ListConvocatoria">
+                    <ui:insert name="ListEvaluacionAuxiliares">
                         <ui:include src="/Pages/evaluacionAuxiliares/ListarSencillo.xhtml" />
                     </ui:insert>
                 </h:panelGrid>
             </p:tab>
-            <p:tab title="Inscripción a Convocatoria">
+            <p:tab title="Cumplimiento de Actividades">
                 <h:panelGrid columns="2" cellpadding="10">
-                    <ui:insert name="ListConvocatoria">
-                        <ui:include src="/Pages/inscripcionConvocatoria/List.xhtml" />
+                    <ui:insert name="ListCumplimientoActividades">
+                        <ui:include src="/Pages/cumplimientoActividades/List.xhtml" />
+                        <ui:include src="/Pages/auxCumplimientoActividades/List.xhtml" /> 
                     </ui:insert>
                 </h:panelGrid>
             </p:tab>
